@@ -6,8 +6,21 @@ using System.Collections;
 using System.Collections.Generic;
 
 /**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
+
+
+Actually you just have to keep track of max value and max loss (delta, diff... what ever you want to call it).
+All other variables are just "clutter" because next value will either be new maximum or something you want to subtract from max.
+Reply as linked Topic
+magaiti
+3d
+
+Yes. an obvious naive implementation in O(n^2) is to compare all pairs of values. 
+Next logical step is to only compare a value with all the preceding ones. 
+Then, you are only interested in one preceding value - the maximum one. 
+And as you go from current minimum candidate to the next, 
+there is only one way for the preceding maximum to change - if the previous minimum candidate is the new maximum. 
+As it is the only value added to the set of preceding ones from the previous step.
+ement.
  **/
 class Solution
 {
